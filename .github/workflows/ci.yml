@@ -20,7 +20,14 @@ jobs:
       - name: SQLite (en-têtes)
         run: apt-get update -qq && apt-get install -y -qq libsqlite3-dev
       - name: Tests du cœur
-        run: swift test --package-path Core
+        shell: bash
+        run: |
+          set -o pipefail
+          swift test --package-path Core 2>&1 | tee test.log || {
+            # Erreurs reprises en annotations (lisibles sans compte GitHub).
+            grep -E "error:|failed" test.log | head -20 | sed -E 's/^/::error::/'
+            exit 1
+          }
 
   ios:
     name: App iOS (macOS)
