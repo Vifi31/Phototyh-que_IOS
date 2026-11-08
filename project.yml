@@ -1,0 +1,66 @@
+# Projet Xcode généré par XcodeGen (https://github.com/yonaskolb/XcodeGen) :
+#   brew install xcodegen && xcodegen generate
+# Le fichier Phototheque.xcodeproj n'est pas versionné : il se régénère à partir d'ici.
+name: Phototheque
+options:
+  bundleIdPrefix: fr.vifi31
+  deploymentTarget:
+    iOS: "17.0"
+  developmentLanguage: fr
+packages:
+  PhotothequeCore:
+    path: Core
+settings:
+  base:
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "5.0"
+targets:
+  Phototheque:
+    type: application
+    platform: iOS
+    sources:
+      - path: App
+    dependencies:
+      - package: PhotothequeCore
+    info:
+      path: App/Info.plist
+      properties:
+        CFBundleDisplayName: Photothèque
+        CFBundleDevelopmentRegion: fr
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        LSRequiresIPhoneOS: true
+        UILaunchScreen: {}
+        UIApplicationSupportsIndirectInputEvents: true
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        # Dossier Photothèque visible dans l'app Fichiers (« Sur mon iPhone »).
+        UIFileSharingEnabled: true
+        LSSupportsOpeningDocumentsInPlace: true
+        NSPhotoLibraryUsageDescription: Photothèque copie les photos que vous choisissez pour les classer ; vos originaux ne sont jamais modifiés.
+        ITSAppUsesNonExemptEncryption: false
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: fr.vifi31.phototheque
+        PRODUCT_NAME: Phototheque
+        TARGETED_DEVICE_FAMILY: "1,2"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        INFOPLIST_KEY_CFBundleDisplayName: Photothèque
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: ""
+schemes:
+  Phototheque:
+    build:
+      targets:
+        Phototheque: all
+    test:
+      config: Debug

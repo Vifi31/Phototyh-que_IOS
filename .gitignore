@@ -1,0 +1,19 @@
+# Projet Xcode généré (xcodegen generate)
+*.xcodeproj/
+*.xcworkspace/
+xcuserdata/
+DerivedData/
+build/
+Payload/
+*.ipa
+
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved
+
+# OS / éditeurs
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
